@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-5 ">
+        <div class="input-group  " id="pizza">
+            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="edad" id="edad">
+            <p class="edad"></p>
+            <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="sexo" id="genero">
+            <p class="genero"> </p>
+            <button onclick="validar()" class="btn">click</button>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        var edad =document.getElementById('edad')
+        var genero = document.getElementById('genero')
+        var pizza= document.getElementById('pizza')
+
+        function validar(){
+            if(edad.value <= 10 && genero.value === "hombre"){
+                pizza.lastElementChild.innerHTML=`<span class ="text-success h2">ganaste un jugo</span>`
+            }else if(edad.value >=18  && genero.value === "hombre"){
+                pizza.lastElementChild.innerHTML=`<span class ="text-success h2">ganaste una cerveza y porcion de pizza con tres carnes</span>`
+            
+            }else if(genero.value === "mujer" && edad.value >=18 ){
+            pizza.lastElementChild.innerHTML=`<span class ="text-success h2">ganaste una cerveza y una porcion de pizza hawaiana</span>`
+            }else{
+                pizza.lastElementChild.innerHTML =`<span class ="text-success h2">no ganaste</span>`
+            }
+}
+
+    </script>
+</body>
+
+</html>
